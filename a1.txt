@@ -1,5 +1,5 @@
-# what's captured in here is pretty messy due to color codes and odd characters captured when using arrow keys, 
-# soo things are answered at the top here before the captured input/output is presented below
+# The input/output capture is difficult to read due to color codes, odd characters, etc, so the 
+# assignment questions are answered first, followed by the annotated output. 
 
 1)  /home/benbow
     echo $HOME
