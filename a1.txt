@@ -1,0 +1,149 @@
+# what's captured in here is pretty messy due to color codes and odd characters captured when using arrow keys, 
+# soo things are answered at the top here before the captured input/output is presented below
+
+1)  /home/benbow
+    echo $HOME
+
+
+2)  1001
+    id -u benbow
+
+
+3)  1001
+    id -G benbow
+
+
+4)  mkdir temp
+    chmod -x temp
+    touch temp/test.txt 
+        # No, permission denied
+    cd temp
+        # No, permission denied
+    ls temp
+        # Yes
+    ls -l temp
+        # Yes
+
+
+5)  mv temp temp2
+        # Yes
+    cp temp2 temp2-copy
+        # Yes, but failed due to -r not specified
+    cp -r temp2 temp2-copy
+
+
+6)  ls /proc/ | grep "mem"
+        # meminfo
+    ls /proc/ | grep "cpu"
+        # cpuinfo
+
+
+7)  head /proc/meminfo
+        # MemTotal:        4049408 kB
+
+
+8)  tail /proc/cpuinfo
+        # 80
+        # POWER8 (architected), altivec supported
+        # 4.19GHz
+
+
+9)  ls -lh ../amazon_reviews_us_Books_v1_02.tsv
+        # 3.1 GB
+
+
+10)  grep -i "great" ../amazon_reviews_us_Books_v1_02.tsv | wc -l
+        # 857172
+     grep -c -i "great" ../amazon_reviews_us_Books_v1_02.tsv
+        # 857172
+
+
+##############
+
+Script started on 2021-09-14 01:48:40+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="149" LINES="46"]
+
+1)
+]0;benbow@f6linuxA5: ~/a1[01;32mbenbow@f6linuxA5[00m:[01;34m~/a1[00m$ echo $HOME
+/home/benbow
+
+
+2)
+]0;benbow@f6linuxA5: ~/a1[01;32mbenbow@f6linuxA5[00m:[01;34m~/a1[00m$ id -u benbow
+1001
+
+
+3)
+]0;benbow@f6linuxA5: ~/a1[01;32mbenbow@f6linuxA5[00m:[01;34m~/a1[00m$ id -G benbow
+1001
+
+
+4)
+]0;benbow@f6linuxA5: ~/a1[01;32mbenbow@f6linuxA5[00m:[01;34m~/a1[00m$ mkdir temp
+]0;benbow@f6linuxA5: ~/a1[01;32mbenbow@f6linuxA5[00m:[01;34m~/a1[00m$ chmod x[K-x temp
+]0;benbow@f6linuxA5: ~/a1[01;32mbenbow@f6linuxA5[00m:[01;34m~/a1[00m$ touch temp/test.txt
+touch: cannot touch 'temp/test.txt': Permission denied
+]0;benbow@f6linuxA5: ~/a1[01;32mbenbow@f6linuxA5[00m:[01;34m~/a1[00m$ cd temp/
+bash: cd: temp/: Permission denied
+]0;benbow@f6linuxA5: ~/a1[01;32mbenbow@f6linuxA5[00m:[01;34m~/a1[00m$ ls temp
+]0;benbow@f6linuxA5: ~/a1[01;32mbenbow@f6linuxA5[00m:[01;34m~/a1[00m$ ls -l temp
+total 0
+
+
+5)
+]0;benbow@f6linuxA5: ~/a1[01;32mbenbow@f6linuxA5[00m:[01;34m~/a1[00m$ mv temp temp2[K[K[K[Kemp2
+]0;benbow@f6linuxA5: ~/a1[01;32mbenbow@f6linuxA5[00m:[01;34m~/a1[00m$ cp temp2 temp2-copy
+cp: -r not specified; omitting directory 'temp2'
+]0;benbow@f6linuxA5: ~/a1[01;32mbenbow@f6linuxA5[00m:[01;34m~/a1[00m$ cp temp2 temp2-copy[1@-[1@r[1@ 
+
+
+6)
+]0;benbow@f6linuxA5: ~/a1[01;32mbenbow@f6linuxA5[00m:[01;34m~/a1[00m$ ls /proc/ | grep "mem"
+io[01;31m[Kmem[m[K
+[01;31m[Kmem[m[Kinfo
+]0;benbow@f6linuxA5: ~/a1[01;32mbenbow@f6linuxA5[00m:[01;34m~/a1[00m$ ls /proc/ | grep "mem"[1P"[1P"[1P"c"p"u"
+[01;31m[Kcpu[m[Kinfo
+
+
+7)
+]0;benbow@f6linuxA5: ~/a1[01;32mbenbow@f6linuxA5[00m:[01;34m~/a1[00m$ head p[K/proc/meminfo 
+MemTotal:        4049408 kB
+MemFree:          293184 kB
+MemAvailable:    1000768 kB
+Buffers:          451904 kB
+Cached:           587008 kB
+SwapCached:         3968 kB
+Active:           718784 kB
+Inactive:         482112 kB
+Active(anon):     100416 kB
+Inactive(anon):    83712 kB
+
+
+8)
+]0;benbow@f6linuxA5: ~/a1[01;32mbenbow@f6linuxA5[00m:[01;34m~/a1[00m$ tail /proc/cpuinfo 
+processor	: 79
+cpu		: POWER8 (architected), altivec supported
+clock		: 4190.000000MHz
+revision	: 2.0 (pvr 004d 0200)
+
+timebase	: 512000000
+platform	: pSeries
+model		: IBM,9080-MHE
+machine		: CHRP IBM,9080-MHE
+MMU		: Hash
+
+
+9)
+]0;benbow@f6linuxA5: ~/a1[01;32mbenbow@f6linuxA5[00m:[01;34m~/a1[00m$ ls -lh ../amazon_reviews_us_Books_v1_02.tsv 
+-rw-rw-r-- 1 benbow benbow 3.1G Nov 24  2017 ../amazon_reviews_us_Books_v1_02.tsv
+
+
+10)
+]0;benbow@f6linuxA5: ~/a1[01;32mbenbow@f6linuxA5[00m:[01;34m~/a1[00m$ gre [Kp -i " gre[K[K[K[Kgreawt" [K[K[K[Kt" ../amazon_reviews_us_Books_v1_02.tsv | wc -l
+857172
+]0;benbow@f6linuxA5: ~/a1[01;32mbenbow@f6linuxA5[00m:[01;34m~/a1[00m$ grep -c -i "great" ../amazon_reviews_us_Books_v1_02.tsv 
+857172
+
+
+]0;benbow@f6linuxA5: ~/a1[01;32mbenbow@f6linuxA5[00m:[01;34m~/a1[00m$ exit
+
+Script done on 2021-09-14 01:55:57+00:00 [COMMAND_EXIT_CODE="0"]
